@@ -1,5 +1,11 @@
 package son.codegym.service;
 
+import son.codegym.entity.Language;
+
+import java.util.List;
+
 public interface ILanguageService {
-    String translate(String language);
+    List<Language> findAll();
+
+    String translate(String english);
 }

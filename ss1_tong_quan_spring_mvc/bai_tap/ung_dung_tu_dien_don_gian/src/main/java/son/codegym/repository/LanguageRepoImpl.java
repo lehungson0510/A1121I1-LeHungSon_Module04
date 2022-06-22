@@ -12,8 +12,8 @@ public class LanguageRepoImpl implements ILanguageRepo {
         languageList.add(new Language("one", "1"));
         languageList.add(new Language("two", "2"));
         languageList.add(new Language("three", "3"));
+        languageList.add(new Language("five", "5"));;
         languageList.add(new Language("four", "4"));
-        languageList.add(new Language("five", "5"));
         languageList.add(new Language("six", "6"));
         languageList.add(new Language("seven", "7"));
         languageList.add(new Language("eight", "8"));
@@ -28,12 +28,7 @@ public class LanguageRepoImpl implements ILanguageRepo {
     }
 
     @Override
-    public String translate(String language) {
-        for (Language language1 : languageList) {
-            if (language.equalsIgnoreCase(language1.getEnglish())) {
-                return language1.getVietnamese();
-            }
-        }
-        return "";
+    public List<Language> findAll() {
+        return languageList;
     }
 }

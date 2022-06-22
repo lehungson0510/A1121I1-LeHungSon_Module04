@@ -1,5 +1,9 @@
 package son.codegym.repository;
 
+import son.codegym.entity.Language;
+
+import java.util.List;
+
 public interface ILanguageRepo {
-    String translate(String language);
+    List<Language> findAll();
 }
