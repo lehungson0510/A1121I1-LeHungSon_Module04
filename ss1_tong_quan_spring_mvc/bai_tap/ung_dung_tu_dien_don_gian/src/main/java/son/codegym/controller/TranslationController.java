@@ -13,7 +13,7 @@ public class TranslationController {
     ILanguageService languageService = new LanguageService();
 
 
-    @GetMapping("/translate")
+    @GetMapping("/")
     public String home() {
         return "home";
     }
