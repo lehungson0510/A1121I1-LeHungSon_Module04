@@ -39,8 +39,6 @@ public class CalculatorController {
                     model.addAttribute("calculation", "Result Multiplication:");
                 }
                 break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + calculation);
         }
         model.addAttribute("number1", num1);
         model.addAttribute("number2", num2);
