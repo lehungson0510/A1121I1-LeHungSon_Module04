@@ -23,11 +23,7 @@
     <button name="calculation" type="submit" value="*">Multiplication(X)</button>
     <button name="calculation" type="submit" value="/">Division(/)</button>
 </form>
-<%--<c:if test="${result != }"></c:if>--%>
 <h3 style="color: red">${message}</h3>
 <h3>${calculation} ${result}</h3>
-<%--<c:if test="${!message.equals('Invalid')}">--%>
-<%--    <h3>${calculation} ${result}</h3>--%>
-<%--</c:if>--%>
 </body>
 </html>
