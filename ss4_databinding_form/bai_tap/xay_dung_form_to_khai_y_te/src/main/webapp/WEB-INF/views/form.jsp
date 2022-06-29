@@ -11,12 +11,18 @@
 <head>
     <title>Title</title>
     <style>
-        span .red {
+        .red{
             color: red;
         }
-        h3 h4{
+
+        h3 h4 {
             font-weight: bolder;
         }
+
+        .error {
+            color: red;
+        }
+
         /*span::after {*/
         /*    clear: both;*/
         /*    content: "";*/
@@ -34,86 +40,109 @@
 <form:form action="${pageContext.request.contextPath}/save" method="post" modelAttribute="medicalForm">
     <table style="width: 100%">
         <tr>
-            <td colspan="6">Họ tên (ghi chữ IN HOA)<span class="red">(*)</span></td>
+            <td colspan="3">Họ tên (ghi chữ IN HOA)<span class="red">(*)</span></td>
         </tr>
         <tr>
-            <td colspan="6"><form:input cssStyle="width: 100%" path="name"/></td>
+            <td colspan="3"><form:input cssStyle="width: 100%" path="name"/></td>
         </tr>
         <tr>
-            <td colspan="2">Năm sinh<span class="red">(*)</span></td>
-            <td colspan="2">Giới tính<span class="red">(*)</span></td>
-            <td colspan="2">Quốc tịch<span class="red">(*)</span></td>
+            <td class="error">${mapError.name}</td>
         </tr>
         <tr>
-            <td colspan="2">
+            <td>Năm sinh<span class="red">(*)</span></td>
+            <td>Giới tính<span class="red">(*)</span></td>
+            <td>Quốc tịch<span class="red">(*)</span></td>
+        </tr>
+        <tr>
+            <td>
                 <form:input cssStyle="width: 100%" path="birthday"/>
             </td>
-            <td colspan="2">
+            <td>
                 <form:select cssStyle="width: 100%" path="gender" items="${gender}"/>
             </td>
-            <td colspan="2">
+            <td>
                 <form:select cssStyle="width: 100%" path="nationality" items="${nationality}"/>
             </td>
         </tr>
         <tr>
-            <td colspan="6">Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác<span>(*)</span></td>
+            <td class="error">${mapError.birthday}</td>
         </tr>
         <tr>
-            <td colspan="6">
+            <td colspan="3">Số hộ chiếu hoặc số CMND hoặc giấy thông hành hợp pháp khác<span>(*)</span></td>
+        </tr>
+        <tr>
+            <td colspan="3">
                 <form:input cssStyle="width: 100%" path="idCard"/>
             </td>
         </tr>
         <tr>
-            <td colspan="6">
+            <td class="error">${mapError.idCard}</td>
+        </tr>
+        <tr>
+            <td colspan="3">
                 Thông tin đi lại<span class="red">(*)</span>
             </td>
         </tr>
         <tr>
             <td>
-                <form:radiobuttons cssStyle="color: black"  path="travelInfo" items="${travelInfo}"/>
+                <form:radiobuttons path="travelInfo" items="${travelInfo}"/>
             </td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td class="error">${mapError.travelInfo}</td>
+        </tr>
+        <tr>
+            <td colspan="1">
                 Số hiệu phương tiện<span class="red">(*)</span>
             </td>
-            <td colspan="3">
+            <td colspan="2">
                 Số ghế<span>(*)</span>
             </td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="1">
                 <form:input cssStyle="width: 100%" path="numberVehicle"/>
             </td>
-            <td colspan="3">
+            <td colspan="2">
                 <form:input cssStyle="width: 100%" path="numberSeat"/>
             </td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="1" class="error">${mapError.numberVehicle}</td>
+            <td colspan="2" class="error">${mapError.numberSeat}</td>
+        </tr>
+        <tr>
+            <td colspan="1">
                 Ngày khởi hành<span class="red">(*)</span>
             </td>
-            <td colspan="3">
+            <td colspan="2">
                 Ngày kết thúc<span class="red">(*)</span>
             </td>
         </tr>
         <tr>
-            <td colspan="3">
+            <td colspan="1">
                 <form:input cssStyle="width: 100%" path="dateStart"/>
             </td>
-            <td colspan="3">
+            <td colspan="2">
                 <form:input cssStyle="width: 100%" path="dateEnd"/>
             </td>
         </tr>
         <tr>
-            <td colspan="6">
+            <td colspan="1" class="error">${mapError.dateStart}</td>
+            <td colspan="2" class="error">${mapError.dateEnd}</td>
+        </tr>
+        <tr>
+            <td colspan="3">
                 Trong vòng 14 ngày qua, Anh/Chị có đến tỉnh thành phố nào?<span class="red">(*)</span>
             </td>
         </tr>
         <tr>
-            <td colspan="6">
+            <td colspan="3">
                 <form:textarea cssStyle="width: 100%" rows="3" path="extraInfo"/>
             </td>
+        </tr>
+        <tr>
+            <td class="error">${mapError.extraInfo}</td>
         </tr>
     </table>
     <center>
