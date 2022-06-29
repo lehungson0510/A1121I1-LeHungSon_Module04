@@ -20,10 +20,10 @@ public class TimeController {
         // Lấy ra time zone của 1 thành phố cụ thể
         TimeZone locale = TimeZone.getTimeZone(city);
         // Tính thời gian hiện tại của một thành phố cụ thể
-        long locale_time = date.getTime() +
+        long localeTime = date.getTime() +
                 (locale.getRawOffset() - local.getRawOffset());
         // Cài đặt lại thời gian cho biến date thành thời gian hiện tại của 1 thành phố cụ thể
-        date.setTime(locale_time);
+        date.setTime(localeTime);
         // Chuyển dữ liệu va gửi qua view
         model.addAttribute("city", city);
         model.addAttribute("date", date);

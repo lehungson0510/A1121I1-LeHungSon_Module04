@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.Arrays;
+
 @Controller
 public class SpiceController {
 
@@ -15,8 +17,8 @@ public class SpiceController {
     }
 
     @PostMapping("/spice")
-    public String display(@RequestParam("spice") String[] spiceArr, Model model) {
-        model.addAttribute("spiceArr", spiceArr);
+    public String display(@RequestParam("spice") String spiceArr, Model model) {
+        model.addAttribute("spice", spiceArr);
         return "home";
     }
 }

@@ -35,8 +35,6 @@
     <hr>
     <button type="submit">save</button>
 </form>
-<c:forEach items="${spiceArr}" var="spice">
     <h3>${spice}</h3>
-</c:forEach>
 </body>
 </html>
