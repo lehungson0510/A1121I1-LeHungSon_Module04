@@ -1,0 +1,54 @@
+package son.codegym.repository;
+
+import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.stereotype.Repository;
+import son.codegym.entity.Music;
+
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
+import java.util.List;
+
+@Repository
+@Transactional
+public class MusicRepoImpl implements IMusicRepository {
+
+    @PersistenceContext
+    EntityManager entityManager;
+
+    @Override
+    public List<Music> findAllMusic() {
+        List<Music> musicList = entityManager
+                .createQuery("select c from music c")
+                .getResultList();
+        // Native SQL
+//        students = entityManager
+//                .createNativeQuery("select * from Student")
+//                .getResultList();
+        return musicList;
+    }
+
+    @Modifying
+    @Override
+    public void create(Music music) {
+        entityManager.persist(music);
+    }
+
+    @Modifying
+    @Override
+    public void update(Music music) {
+        entityManager.persist(music);
+    }
+
+    @Override
+    public Music findMusicByName(String nameSong) {
+        return entityManager.find(Music.class, nameSong);
+    }
+
+    @Modifying
+    @Override
+    public void delete(String name) {
+        Music music = findMusicByName(name);
+        entityManager.remove(music);
+    }
+}

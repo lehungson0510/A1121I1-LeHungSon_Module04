@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="9519a3b8-3afd-44dd-9d66-ad690b002f98" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/su_dung_thymeleaf_quan_li_san_pham/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai_tap/su_dung_thymeleaf_quan_li_san_pham/.gradle/6.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/su_dung_thymeleaf_quan_li_san_pham/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai_tap/su_dung_thymeleaf_quan_li_san_pham/.gradle/6.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/su_dung_thymeleaf_quan_li_san_pham/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai_tap/su_dung_thymeleaf_quan_li_san_pham/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../bai_tap/su_dung_thymeleaf_quan_li_san_pham/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../bai_tap/su_dung_thymeleaf_quan_li_san_pham/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/6.1/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/6.1/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/6.1/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/6.1/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/6.1/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/6.1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/buildOutputCleanup/cache.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.gradle/vcs-1/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/java/com/codegym/configuration/AppConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/java/com/codegym/configuration/AppInitializer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/java/com/codegym/controller/CustomerController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/java/com/codegym/model/Customer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/java/com/codegym/service/CustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/java/com/codegym/service/ICustomerService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/webapp/WEB-INF/views/create.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/webapp/WEB-INF/views/delete.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/webapp/WEB-INF/views/edit.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/webapp/WEB-INF/views/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/webapp/WEB-INF/views/layout.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../su_dung_thymeleaf_quan_li_khach_hang/spring-customer-management-thymleaf-develop/src/main/webapp/WEB-INF/views/view.html" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2BTbpi3LT4X78utkKyrg3TiJwxG" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Artifacts" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
+  </component>
+  <component name="RunManager">
+    <configuration default="true" type="TomeeConfiguration" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_sd_thymeleaf_quan_li_khach_hang_2" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55014" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" ALTERNATIVE_JRE_ENABLED="false">
+      <deployment />
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="_sd_thymeleaf_quan_li_khach_hang" />
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="Tomcat Catalina" />
+      <predefined_log_file id="Tomcat Manager" />
+      <predefined_log_file id="Tomcat Host Manager" />
+      <predefined_log_file id="Tomcat Localhost Access" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55011" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <name>CONTEXT_XML</name>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <name>STAGING</name>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="TOMCAT_LOCALHOST_LOG_ID" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="55013" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9519a3b8-3afd-44dd-9d66-ad690b002f98" name="Default Changelist" comment="" />
+      <created>1656933206619</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1656933206619</updated>
+      <workItem from="1656933207945" duration="106000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="248" y="0" key="#Project_Structure" timestamp="1656933235424">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="248" y="0" key="#Project_Structure/0.0.1536.824@0.0.1536.824" timestamp="1656933235424" />
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1656933312184">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="67" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1656933312184" />
+  </component>
+</project>

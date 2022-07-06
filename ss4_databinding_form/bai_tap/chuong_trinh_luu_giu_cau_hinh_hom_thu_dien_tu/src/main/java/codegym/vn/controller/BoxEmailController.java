@@ -1,6 +1,13 @@
 package codegym.vn.controller;
 
 import codegym.vn.entity.BoxEmail;
+import codegym.vn.repository.ILanguageRepo;
+import codegym.vn.repository.IPageSizeRepo;
+import codegym.vn.repository.LanguageRepoImpl;
+import codegym.vn.service.ILanguageService;
+import codegym.vn.service.IPageSizeService;
+import codegym.vn.service.LanguageServiceImpl;
+import codegym.vn.service.PageSizesServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,6 +21,8 @@ import java.util.List;
 
 @Controller
 public class BoxEmailController {
+    ILanguageService languageService = new LanguageServiceImpl();
+    IPageSizeService pageSizeService = new PageSizesServiceImpl();
     public BoxEmail boxEmailSave = new BoxEmail();
 
     @ModelAttribute("boxEmail")
@@ -25,8 +34,8 @@ public class BoxEmailController {
     public ModelAndView display(@ModelAttribute("boxEmail") BoxEmail boxEmail, Model model) {
         ModelAndView modelAndView = new ModelAndView("home");
         modelAndView.addObject("boxEmail",boxEmailSave);
-        modelAndView.addObject("language", new String[]{"English", "Vietnamese", "Japanese", "Chinese"});
-        modelAndView.addObject("pageSize", new String[]{"5", "10", "15", "25", "50", "100"});
+        modelAndView.addObject("language", languageService.languageList() );
+        modelAndView.addObject("pageSize", pageSizeService.pageSizeList());
         return modelAndView;
     }
 
@@ -34,8 +43,8 @@ public class BoxEmailController {
     public ModelAndView save(@ModelAttribute("boxEmail") BoxEmail boxEmail, Model model) {
         boxEmailSave = boxEmail;
         ModelAndView modelAndView = new ModelAndView("display");
-        modelAndView.addObject("language", new String[]{"English", "Vietnamese", "Japanese", "Chinese"});
-        modelAndView.addObject("pageSize", new String[]{"5", "10", "15", "25", "50", "100"});
+        modelAndView.addObject("language", languageService.languageList() );
+        modelAndView.addObject("pageSize", pageSizeService.pageSizeList());
         model.addAttribute("boxEmail", boxEmail);
         return modelAndView;
     }
