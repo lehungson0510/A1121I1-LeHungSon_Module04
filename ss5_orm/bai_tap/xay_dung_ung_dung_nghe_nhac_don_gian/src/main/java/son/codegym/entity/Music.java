@@ -1,5 +1,6 @@
 package son.codegym.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -7,6 +8,7 @@ import javax.persistence.Table;
 @Entity(name = "music")
 @Table
 public class Music {
+    @Column(name = "name_song", columnDefinition = " varchar(250)")
     @Id
     private String nameSong;
     private String singer;

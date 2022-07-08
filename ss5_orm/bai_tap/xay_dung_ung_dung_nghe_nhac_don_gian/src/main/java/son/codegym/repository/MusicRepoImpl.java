@@ -31,13 +31,16 @@ public class MusicRepoImpl implements IMusicRepository {
     @Modifying
     @Override
     public void create(Music music) {
-        entityManager.persist(music);
+        if (music.getNameSong() == null)
+            entityManager.persist(music);
+        else {
+            entityManager.merge(music);
+        }
     }
 
     @Modifying
     @Override
     public void update(Music music) {
-        entityManager.persist(music);
     }
 
     @Override

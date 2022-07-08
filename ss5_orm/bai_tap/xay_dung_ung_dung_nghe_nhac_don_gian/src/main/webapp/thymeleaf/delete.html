@@ -10,23 +10,30 @@
     <table border="1" th:object="${music}">
         <tr>
             <td>Name song</td>
-            <td th:text="*{nameSong}"></td>
+            <td ><input type="text" th:field="*{nameSong}"></td>
         </tr>
         <tr>
             <td>Singer</td>
-            <td th:text="*{singer}"></td>
+            <td ><input type="text" th:field="*{singer}"></td>
         </tr>
         <tr>
             <td>Type music</td>
-            <td th:text="*{typeOfMusic}"></td>
+            <td ><input type="text" th:field="*{typeOfMusic}"></td>
         </tr>
         <tr>
             <td>Path</td>
-            <td th:text="*{path}"></td>
+            <td>  <audio controls>
+                <source th:src="@{'/music/' + *{path}}" type="audio/ogg">
+                <source th:src="@{'/music/' + *{path}}" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            </td>
         </tr>
-        <td colspan="2">
-            <button type="submit">Delete</button>
-        </td>
+        <tr>
+            <td colspan="2">
+                <button type="submit">Delete</button>
+               <button><a th:href="@{/music}">Cancel</a></button>
+            </td>
         </tr>
     </table>
 </form>
