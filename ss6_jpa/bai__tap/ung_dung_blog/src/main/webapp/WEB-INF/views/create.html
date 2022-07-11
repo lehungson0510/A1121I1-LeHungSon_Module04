@@ -18,25 +18,23 @@
                 <table border="1">
                     <tr>
                         <td>Name</td>
-                        <td><input type="text" th:field="*{name}" placeholder="nhập name blog"></td>
+                        <td><input type="text" th:field="*{name}" placeholder="nhập name"></td>
                     </tr>
                     <tr>
                         <td>Image</td>
-                        <td><input type="text" th:field="*{image}" placeholder="nhập image blog"></td>
+                        <td><input type="text" th:field="*{image}" placeholder="nhập image"></td>
                     </tr>
                     <tr>
                         <td>Describe</td>
-                        <td><input type="text" th:field="*{describe}" placeholder="nhập describe blog"></td>
+                        <td><input type="text" th:field="*{describe}" placeholder="nhập description"></td>
                     </tr>
-                    <tr>
-                        <td>
-                            <input type="submit" value="Register"/>
+                    <tr style="text-align: center;">
+                        <td colspan="2">
+                            <input type="submit" value="add"/>
                         </td>
                     </tr>
                 </table>
             </form>
-            <br>
-            <a th:href="@{/list}">Back to list</a>
         </center>
     </body>
 </html>

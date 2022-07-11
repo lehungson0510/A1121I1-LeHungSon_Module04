@@ -1,6 +1,6 @@
 package son.codegym.service;
 
-import son.codegym.entity.Customer;
+import son.codegym.model.Customer;
 
 import java.util.List;
 
@@ -11,10 +11,8 @@ public interface ICustomerService {
 
     Customer findById(int id);
 
-    void update(Customer customer);
+    void update(int id, Customer customer);
 
     void remove(int id);
-
-    List<Customer> search(String name);
 }
 
