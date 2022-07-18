@@ -51,27 +51,28 @@ public class ProductController {
         return "/product/view";
     }
 
-    @GetMapping("/edit/{product_id}")
-    public String showFormUpdateProduct(@PathVariable("product_id") String id, Model model) {
-        List<Factory> factories = IFactoryNameService.findAll();
-        Product product = IProductService.findById(id);
-        model.addAttribute("factories", factories);
-        model.addAttribute("product", product);
-        return "/product/create";
-    }
-
     @GetMapping("/delete/{product_id}")
     public String deleteProduct(@PathVariable("product_id") String id, RedirectAttributes redirectAttributes) {
         IProductService.delete(id);
         redirectAttributes.addFlashAttribute("mess", "Xóa thành công");
-        return "redirect:/product";
+        return "redirect:/product/list";
+    }
+
+    @GetMapping("/edit/{product_id}")
+    public String showFormUpdateProduct(@PathVariable("product_id") String id, Model model) {
+        List<Factory> factories = IFactoryNameService.findAll();
+        Product product = IProductService.findById(id);
+        System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAA"+ product.getOutOfDate());
+        model.addAttribute("factories", factories);
+        model.addAttribute("product", product);
+        return "/product/edit";
     }
 
     @PostMapping("/edit")
     public String updateProduct(@ModelAttribute("product") Product product, Model model, RedirectAttributes redirectAttributes) {
         redirectAttributes.addFlashAttribute("mess", "Cập nhật thành công");
         IProductService.update(product);
-        return "redirect:/product";
+        return "redirect:/product/list";
     }
 
     @GetMapping("/view")

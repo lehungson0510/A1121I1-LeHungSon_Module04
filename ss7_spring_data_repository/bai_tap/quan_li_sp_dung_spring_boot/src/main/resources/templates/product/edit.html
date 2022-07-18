@@ -14,22 +14,22 @@
                 <div class="card">
                     <div class="header">
                         <h2>
-                            Add new Student
+                            Edit Student
                         </h2>
                     </div>
                     <div class="body">
-                        <form id="form-register" th:action="@{/product/eidt}" method="post" th:object="${product}" enctype="multipart/form-data">
+                        <form id="form-register" th:action="@{/product/edit}" method="post" th:object="${product}" enctype="multipart/form-data">
                             <label for="id">ID: <span style="color: red;"> *</span></label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input id="id" th:field="*{id}" class="form-control" placeholder="Product ID" tabindex="1" autofocus="autofocus" />
+                                    <input id="id" th:field="*{id}" name="id" class="form-control" placeholder="Product ID" tabindex="1" autofocus="autofocus" />
                                 </div>
                             </div>
 
                             <label for="name">Name: <span style="color: red;"> *</span></label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input id="name" th:field="*{name}" class="form-control" placeholder="Product Name" tabindex="2" />
+                                    <input id="name" th:field="*{name}" name="name" class="form-control" placeholder="Product Name" tabindex="2" />
                                 </div>
                             </div>
 
@@ -37,7 +37,7 @@
                             <label for="price">Price: <span style="color: red;"> *</span></label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="number" id="price" th:field="*{price}" class="form-control" placeholder="Price" tabindex="2" />
+                                    <input type="number" id="price" name="price" th:field="*{price}" class="form-control" placeholder="Price" tabindex="2" />
                                 </div>
                             </div>
 
@@ -45,21 +45,21 @@
                             <label for="Describe">Describe: <span style="color: red;"> *</span></label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <textarea id="Describe" th:field="*{description}" class="form-control" placeholder="Description" tabindex="2" rows="3" />
+                                    <textarea id="Describe" name="description" th:field="*{description}" class="form-control" placeholder="Description" tabindex="2" rows="3" />
                                 </div>
                             </div>
 
                             <label for="manufacturingDate">NSX: <span style="color: red;"> *</span></label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="date" id="manufacturingDate" th:selected="*{manufacturingDate}" th:field="*{manufacturingDate}" class="form-control" placeholder="NSX" tabindex="2" />
+                                    <input type="date" id="manufacturingDate" th:text="*{#dates.format(manufacturingDate, 'dd-MM-yyyy')}"  th:field="*{manufacturingDate}" class="form-control" placeholder="NSX" tabindex="2" />
                                 </div>
                             </div>
 
                             <label for="outOfDate">HSD: <span style="color: red;"> *</span></label>
                             <div class="form-group">
                                 <div class="form-line">
-                                    <input type="date" id="outOfDate" th:selected="*{outOfDate}" th:field="*{outOfDate}" class="form-control" placeholder="HSD" tabindex="2" />
+                                    <input type="date" id="outOfDate" th:field="*{outOfDate}" class="form-control" placeholder="HSD" tabindex="2" />
                                 </div>
                             </div>
 
@@ -68,7 +68,7 @@
                             <div class="form-group">
                                 <div class="form-line">
                                     <select th:field="*{factory}" class="form-control" tabindex="4">
-                                        <option value=""></option>
+                                        <option value="">Factory</option>
                                         <option th:each="factory : ${factories}"
                                                 th:value="${factory.factoryCode}"
                                                 th:text="${factory.name}"
