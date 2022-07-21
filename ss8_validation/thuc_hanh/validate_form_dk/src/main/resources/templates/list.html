@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/users/enroll}" method="post" th:object="${user}">
+    <table>
+        <tr>
+            <td>Name</td>
+            <td><input th:field="*{name}"></td>
+            <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></td>
+        </tr>
+        <tr>
+            <td>Age</td>
+            <td><input th:field="*{age}"></td>
+            <td th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <button>Submit</button>
+            </td>
+        </tr>
+    </table>
+</form>
+<p th:if="${mess != null}" th:text="${mess}"></p>
+</body>
+</html>

@@ -89,8 +89,8 @@ public class MusicController {
     }
 
     @PostMapping("/delete")
-    public String delete(@ModelAttribute("music") MusicForm musicForm) {
-        musicService.delete(musicForm.getNameSong());
+    public String delete(@ModelAttribute("music") Music music) {
+        musicService.delete(music.getNameSong());
         return "redirect:/music/";
     }
 
