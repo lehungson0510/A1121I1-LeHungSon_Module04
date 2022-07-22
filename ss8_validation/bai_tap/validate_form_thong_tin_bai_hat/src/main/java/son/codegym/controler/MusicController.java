@@ -6,12 +6,14 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.FileCopyUtils;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import son.codegym.entity.Music;
 import son.codegym.entity.MusicForm;
 import son.codegym.service.IMusicService;
 
+import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
@@ -49,18 +51,22 @@ public class MusicController {
     }
 
     @PostMapping("/create")
-    public String save(@ModelAttribute("musicForm") MusicForm musicForm) {
-        MultipartFile multipartFile = musicForm.getPath();
-        String fileName = multipartFile.getOriginalFilename();
-        try {
-            FileCopyUtils.copy(musicForm.getPath().getBytes(), new File(fileUpload + fileName));
-        } catch (IOException ex) {
-            ex.printStackTrace();
+    public String save(@Valid @ModelAttribute("musicForm") MusicForm musicForm, BindingResult bindingResult) {
+        if (bindingResult.hasErrors()) {
+            return "create";
+        } else {
+            MultipartFile multipartFile = musicForm.getPath();
+            String fileName = multipartFile.getOriginalFilename();
+            try {
+                FileCopyUtils.copy(musicForm.getPath().getBytes(), new File(fileUpload + fileName));
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            Music music = new Music(musicForm.getNameSong(), musicForm.getSinger(),
+                    musicForm.getTypeOfMusic(), fileName);
+            musicService.create(music);
+            return "redirect:/music/";
         }
-        Music music = new Music(musicForm.getNameSong(), musicForm.getSinger(),
-                musicForm.getTypeOfMusic(), fileName);
-        musicService.create(music);
-        return "redirect:/music/";
     }
 
     @GetMapping("/edit/{name}")

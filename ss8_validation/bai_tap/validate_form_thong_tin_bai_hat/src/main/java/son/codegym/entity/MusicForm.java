@@ -2,10 +2,24 @@ package son.codegym.entity;
 
 import org.springframework.web.multipart.MultipartFile;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 public class MusicForm {
 
+    @NotBlank(message = "{notEmpty}")
+    @Size(max = 800, message = "{size300}")
+    @Pattern(regexp = "^\\w*$", message = "{regexr1}")
     private String nameSong;
+    @Size(max = 300, message = "{size300}")
+    @NotBlank(message = "{notEmpty}")
+//    @Pattern(regexp = "^[^@;,.=\\-+]*$", message = "Không được chứa các kí tự @;,.=-+")
+    @Pattern(regexp = "^\\w*$", message = "{regexr1}")
     private String singer;
+    @Size(max = 1000 , message = "{size1000}")
+    @NotBlank(message = "{notEmpty}")
+    @Pattern(regexp = "^[\\w,]*$", message = "Không được chứa các kí tự đặc biệt ngoại trừ dấu phẩy")
     private String typeOfMusic;
     private MultipartFile path;
 

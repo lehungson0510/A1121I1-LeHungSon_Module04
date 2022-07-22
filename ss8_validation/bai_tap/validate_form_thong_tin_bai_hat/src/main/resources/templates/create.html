@@ -11,19 +11,22 @@
     <table border="1" th:object="${musicForm}">
         <tr>
             <td><label for="name">Name song</label></td>
-            <td><input type="text" id="name" required th:field="*{nameSong}" placeholder="Input name song"></td>
+            <td><input type="text" id="name" th:field="*{nameSong}" placeholder="Input name song"></td>
+            <td th:if="${#fields.hasErrors('nameSong')}" th:errors="*{nameSong}"></td>
         </tr>
         <tr>
             <td><label for="singer">Singer</label></td>
-            <td><input id="singer" type="text" required th:field="*{singer}" placeholder="Input singer"></td>
+            <td><input id="singer" type="text"  th:field="*{singer}" placeholder="Input singer"></td>
+            <td th:if="${#fields.hasErrors('singer')}" th:errors="*{singer}"></td>
         </tr>
         <tr>
             <td><label for="type">Type music</label></td>
-            <td><input id="type" type="text" required th:field="*{typeOfMusic}" placeholder="Input type music"></td>
+            <td><input id="type" type="text" th:field="*{typeOfMusic}" placeholder="Input type music"></td>
+            <td th:if="${#fields.hasErrors('typeOfMusic')}" th:errors="*{typeOfMusic}"></td>
         </tr>
         <tr>
             <td><label for="path">Path</label></td>
-            <td><input id="path" type="file" required th:field="*{path}" placeholder="Input name song"></td>
+            <td><input id="path" type="file"  th:field="*{path}" placeholder="Input name song"></td>
         </tr>
         <tr>
             <td colspan="2"><button type="submit">Save</button></td>
