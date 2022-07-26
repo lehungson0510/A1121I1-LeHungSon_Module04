@@ -5,7 +5,6 @@ import org.springframework.validation.Validator;
 import son.codegym.entity.User;
 
 public class UserValidation implements Validator {
-    String a;
     @Override
     public boolean supports(Class<?> clazz) {
         return User.class.isAssignableFrom(clazz);
@@ -19,10 +18,10 @@ public class UserValidation implements Validator {
 //        } else if (!user.getPhoneNumber().startsWith("0")) {
 //            errors.rejectValue("phoneNumber", "phoneNumberStart",new String[]{"0"}, "Số điện thoại không đúng định dạng");
 //        }
-        if (!user.getEmail().matches("^[a-z]\\w*@gmail+\\.[a-z]+$")){
+        if (!user.getEmail().matches("^[a-z]\\w*@gmail+\\.[a-z]+$")) {
             errors.rejectValue("email", "email", "Email không đúng định dạng");
         }
-        if (!user.getPhoneNumber().matches("^090\\d{7}$|^091\\d{7}$|^\\(84\\)\\+90\\d{7}$|^\\(84\\)\\+91\\d{7}$")){
+        if (!user.getPhoneNumber().matches("^090\\d{7}$|^091\\d{7}$|^\\(84\\)\\+90\\d{7}$|^\\(84\\)\\+91\\d{7}$")) {
             errors.rejectValue("phoneNumber", "phoneNumber", "Số điện thoại không đúng định dạng");
         }
     }

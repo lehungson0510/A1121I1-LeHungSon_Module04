@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{template/template::header('List product')}">
+</head>
+<body>
+<div th:replace="~{template/template::pageloader}"></div>
+<nav th:replace="~{template/template::navbar}"></nav>
+<section th:replace="~{product/layout::sidebar}"></section>
+
+<section class="content">
+    <div class="container-fluid">
+        <!-- Vertical Layout -->
+        <div class="row clearfix">
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                <div class="card">
+                    <div class="header">
+                        <h2>
+                            Product list
+                        </h2>
+                        <h3 th:if="${mess != null}" th:text="${mess}"></h3>
+                    </div>
+                    <div class="body table-responsive">
+                        <a th:href="@{/product/create}" class="btn btn-primary btn-custom">
+                            <i class="fa fa-plus-circle" aria-hidden="true"></i> Add new product
+                        </a>
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Describe</th>
+                                <th>Manufacturing Date</th>
+                                <th>Out Of Date</th>
+                                <th>Factory</th>
+                                <th>View</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            </thead>
+                            <tbody th:each="st, iterStat: ${products}">
+                            <tr th:object="${st}">
+                                <td th:text="*{id}"></td>
+                                <td th:text="*{name}"></td>
+                                <td th:text="*{price}"></td>
+                                <td th:text="*{description}"></td>
+<!--                                <td th:text="*{manufacturingDate}"></td>-->
+<!--                                <td th:text="*{outOfDate}"></td>-->
+                                <td th:text="*{#dates.format(manufacturingDate, 'dd-MM-yyyy')}"></td>
+                                <td th:text="*{#dates.format(outOfDate, 'dd-MM-yyyy')}"></td>
+                                <td th:text="*{factory.name}"></td>
+
+                                <!--                                        <td th:text="*{sex ? 'Nam' : 'Nữ'}"></td>-->
+                                <td>
+                                    <a th:href="@{/product/view/{id}(id=*{id})}">View</a>
+                                </td>
+                                <td>
+                                    <a th:href="@{/product/edit/{id}(id=*{id})}">Edit</a>
+                                </td>
+                                <td><a th:href="@{/product/delete/{id}(id=*{id})}">Delete</a>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                        <div th:if="${products.totalPages > 0}" class="pagination"
+                             th:each="pageNumber : ${pageNumbers}">
+                            <a th:href="@{/product/list(size=${products.size}, page=${pageNumber})}"
+                               th:text="${pageNumber}"
+                               th:class="${pageNumber==products.number + 1} ? active"></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<div th:replace="~{template/template::script}"></div>
+<div th:replace="~{template/template::footer}"></div>
+</body>
+</html>
