@@ -14,7 +14,15 @@ public class BookServiceImpl implements IBookService {
     IBookRepo bookRepo;
 
     @Override
-    public List<Book> getAllBook() {
+    public List<Book> findAll() {
+        List<Book> bookList = bookRepo.findAll();
+        for (Book book : bookList) {
+            if (book.getQuantity() > 0) {
+                book.setStatus(true);
+            } else {
+                book.setStatus(false);
+            }
+        }
         return bookRepo.findAll();
     }
 
@@ -35,6 +43,12 @@ public class BookServiceImpl implements IBookService {
 
     @Override
     public Book findById(String id) {
-        return bookRepo.findById(id).orElse(null);
+        Book book = bookRepo.findById(id).orElse(null);
+        if (book.getQuantity() > 0) {
+            book.setStatus(true);
+        } else {
+            book.setStatus(false);
+        }
+        return book;
     }
 }

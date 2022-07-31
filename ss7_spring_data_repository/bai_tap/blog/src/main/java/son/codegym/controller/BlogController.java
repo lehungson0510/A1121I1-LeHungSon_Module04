@@ -1,5 +1,6 @@
 package son.codegym.controller;
 
+import org.springframework.data.domain.Sort;
 import son.codegym.entity.Blog;
 import son.codegym.entity.Category;
 import son.codegym.service.IBlogService;
@@ -26,7 +27,7 @@ public class BlogController {
     ICategoryService categoryService;
 
     @GetMapping("/list")
-    public String display(Model model, @PageableDefault(value = 4) Pageable pageable, @RequestParam("name") Optional<String> name) {
+    public String display(Model model, @PageableDefault(value = 4, sort = "name", direction = Sort.Direction.ASC) Pageable pageable, @RequestParam("name") Optional<String> name) {
         List<Category> categoryList = categoryService.findAll();
         Page<Blog> blogList;
         if(name.isPresent()) {

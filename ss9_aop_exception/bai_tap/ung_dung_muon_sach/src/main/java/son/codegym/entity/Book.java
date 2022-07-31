@@ -9,15 +9,17 @@ public class Book {
     @Column(name = "book_id", columnDefinition = "varchar(20)")
     private String id;
     private String name;
+    @Column(columnDefinition = "integer default '2' ")
     private int quantity;
-    private String status;
+    @Column(columnDefinition = "boolean default false")
+    private boolean status;
     @OneToMany(mappedBy = "book",cascade = CascadeType.REMOVE)
     private Set<Borrowing> borrowings;
 
     public Book() {
     }
 
-    public Book(String id, String name, int quantity, String status, Set<Borrowing> borrowings) {
+    public Book(String id, String name, int quantity, boolean status, Set<Borrowing> borrowings) {
         this.id = id;
         this.name = name;
         this.quantity = quantity;
@@ -49,11 +51,11 @@ public class Book {
         this.quantity = quantity;
     }
 
-    public String getStatus() {
+    public boolean isStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
+    public void setStatus(boolean status) {
         this.status = status;
     }
 

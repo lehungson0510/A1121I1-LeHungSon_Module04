@@ -5,7 +5,7 @@ import son.codegym.entity.Book;
 import java.util.List;
 
 public interface IBookService {
-    List<Book> getAllBook();
+    List<Book> findAll();
     void add(Book book);
     void delete(String id);
     void update(Book book);

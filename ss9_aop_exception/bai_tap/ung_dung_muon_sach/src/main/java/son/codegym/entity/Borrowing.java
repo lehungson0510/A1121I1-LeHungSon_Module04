@@ -7,7 +7,7 @@ public class Borrowing {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int idBorrow;
+    private String idBorrow;
     @ManyToOne
     @JoinColumn(name = "book_id")
     private Book book;
@@ -15,7 +15,7 @@ public class Borrowing {
     public Borrowing() {
     }
 
-    public Borrowing(int id, int idBorrow, Book book) {
+    public Borrowing(int id, String idBorrow, Book book) {
         this.id = id;
         this.idBorrow = idBorrow;
         this.book = book;
@@ -29,11 +29,11 @@ public class Borrowing {
         this.id = id;
     }
 
-    public int getIdBorrow() {
+    public String getIdBorrow() {
         return idBorrow;
     }
 
-    public void setIdBorrow(int idBorrow) {
+    public void setIdBorrow(String idBorrow) {
         this.idBorrow = idBorrow;
     }
 
