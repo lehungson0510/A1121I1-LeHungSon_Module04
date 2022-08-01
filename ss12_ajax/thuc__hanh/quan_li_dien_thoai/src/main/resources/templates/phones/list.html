@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
@@ -27,13 +27,112 @@
                 //tên API
                 url: "/smartphones",
                 //xử lý khi thành công
-                success: console.log('success')
-
+                success: successHandler
             });
             //chặn sự kiện mặc định của thẻ
             event.preventDefault();
         }
 
+        function getSmartPhone(smartphone) {
+            return `
+            <tr>
+                <td>${smartphone.producer}</td>
+                <td>${smartphone.model}</td>
+                <td>${smartphone.price}</td>
+                <td><a href="${smartphone.id}" class="editSmartPhone">Edit</a></td>
+                <td><a href="${smartphone.id}" class="deleteSmartPhone">Delete</a></td>
+            </tr>
+            `
+        }
+
+        function successHandler() {
+            $.ajax({
+                type: "GET",
+                url: "/smartphones",
+                success: function (data) {
+                    let content =
+                        ` <tr>
+                           <th>Producer</th>
+                           <th>Model</th>
+                           <th>Price</th>
+                           <th>Edit</th>
+                           <th>Delete</th>
+                      </tr>
+                     `
+                    ;
+                    for (let i = 0; i < data.length; i++) {
+                        content += getSmartPhone(data[i]);
+                    }
+                    document.getElementById('smartphoneList').innerHTML = content;
+                }
+            });
+        }
+
+        $(document).ready(function () {
+            // sự kiện nào thực hiện ajax
+            $('.deleteSmartPhone').click(function (event) {
+                // lấy dữ liệu
+                let a = $(this);
+                let smartPhoneId = a.attr("href");
+                // gọi ajax
+                $.ajax({
+                    type: "DELETE",
+                    url: `/smartphones/${smartPhoneId}`,
+                    success: function (data) {
+                        a.parent().parent().remove();
+                    }
+                });
+                event.preventDefault();
+            });
+        })
+
+        $(document).ready(function () {
+            $('.editSmartPhone').click(function (event) {
+                let a = $(this);
+                let smartPhoneId = a.attr('href');
+                $.ajax({
+                    type: "GET",
+                    url: `/smartphones/${smartPhoneId}`,
+                    success: function (data) {
+                        a.parent().parent().html(
+                            `<form>
+                                <tr>
+                                    <td><input type="text" value="${data.producer}" id="uProducer"></td>
+                                    <td><input type="text" value="${data.model}" id="uModel"></td>
+                                    <td><input type="text" value="${data.price}" id="uPrice"></td>
+                                    <td><input type="submit" value="Update" onclick="updateSmartPhone(${data.id})"></td>
+                                    <td><input type="submit" value="Cancel update" onclick="successHandler()"></td></tr>
+                                    </form>
+                            `)
+                    }
+                });
+                event.preventDefault();
+            });
+        })
+
+        function updateSmartPhone(updateId) {
+            let producer = $("#uProducer").val();
+            let model = $("#uModel").val();
+            let price = $("#uPrice").val();
+            let id = updateId;
+            let updateSmartPhone = {
+                id:id,
+                producer: producer,
+                model: model,
+                price: price
+            };
+
+            $.ajax({
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                type: "PUT",
+                data: JSON.stringify(updateSmartPhone),
+                url: `/smartphones/edit/${id}`,
+                success: successHandler
+            });
+        }
     </script>
 </head>
 <body>
@@ -57,5 +156,24 @@
         </tr>
     </table>
 </form>
+<h1>Smartphone List</h1>
+<table id="smartphoneList">
+    <tr>
+        <td>Producer</td>
+        <td>Model</td>
+        <td>Price</td>
+        <td>Edit</td>
+        <td>Delete</td>
+    </tr>
+    <th:block th:each="smartphone: ${smartphones}">
+        <tr>
+            <td th:text="${smartphone.producer}"></td>
+            <td th:text="${smartphone.model}"></td>
+            <td th:text="${smartphone.price}"></td>
+            <td><a class="editSmartPhone" th:href="${smartphone.getId()}">Edit</a></td>
+            <td><a class="deleteSmartPhone" th:href="${smartphone.getId()}">Delete</a></td>
+        </tr>
+    </th:block>
+</table>
 </body>
 </html>
