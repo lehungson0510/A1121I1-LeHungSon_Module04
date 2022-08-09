@@ -70,7 +70,7 @@
 
         $(document).ready(function () {
             // sự kiện nào thực hiện ajax
-            $('.deleteSmartPhone').click(function (event) {
+            $('#smartphoneList').on('click','.deleteSmartPhone' ,function (event) {
                 // lấy dữ liệu
                 let a = $(this);
                 let smartPhoneId = a.attr("href");
@@ -87,7 +87,7 @@
         })
 
         $(document).ready(function () {
-            $('.editSmartPhone').click(function (event) {
+            $('#smartphoneList').on('click','.editSmartPhone' ,function (event) {
                 let a = $(this);
                 let smartPhoneId = a.attr('href');
                 $.ajax({

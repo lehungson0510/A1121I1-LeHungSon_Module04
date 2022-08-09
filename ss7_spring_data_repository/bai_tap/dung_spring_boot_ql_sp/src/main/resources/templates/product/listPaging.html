@@ -44,10 +44,10 @@
                                 <td th:text="*{name}"></td>
                                 <td th:text="*{price}"></td>
                                 <td th:text="*{description}"></td>
-                                <td th:text="*{manufacturingDate}"></td>
-                                <td th:text="*{outOfDate}"></td>
-<!--                                <td th:text="*{#dates.format(manufacturingDate, 'dd-MM-yyyy')}"></td>-->
-<!--                                <td th:text="*{#dates.format(outOfDate, 'dd-MM-yyyy')}"></td>-->
+<!--                                <td th:text="*{manufacturingDate}"></td>-->
+<!--                                <td th:text="*{outOfDate}"></td>-->
+                                <td th:text="*{#dates.format(manufacturingDate, 'dd-MM-yyyy')}"></td>
+                                <td th:text="*{#dates.format(outOfDate, 'dd-MM-yyyy')}"></td>
                                 <td th:text="*{factory.name}"></td>
 
                                 <!--                                        <td th:text="*{sex ? 'Nam' : 'Nữ'}"></td>-->

@@ -46,7 +46,7 @@
                                     <input type="number" id="price" th:field="*{price}" class="form-control"
                                            placeholder="Price" tabindex="2"/>
                                 </div>
-                                <p style="color: red"  th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
+                                <p style="color: red" th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></p>
                             </div>
 
 
@@ -64,7 +64,7 @@
                                     <input type="date" id="manufacturingDate" th:field="*{manufacturingDate}"
                                            class="form-control" placeholder="NSX" tabindex="2"/>
                                 </div>
-                                <p  style="color: red"  th:if="${#fields.hasErrors('manufacturingDate')}"
+                                <p style="color: red" th:if="${#fields.hasErrors('manufacturingDate')}"
                                    th:errors="*{manufacturingDate}"></p>
                             </div>
 
@@ -74,7 +74,8 @@
                                     <input type="date" id="outOfDate" th:field="*{outOfDate}" class="form-control"
                                            placeholder="HSD" tabindex="2"/>
                                 </div>
-                                <p style="color: red"  th:if="${#fields.hasErrors('outOfDate')}" th:errors="*{outOfDate}"></p>
+                                <p style="color: red" th:if="${#fields.hasErrors('outOfDate')}"
+                                   th:errors="*{outOfDate}"></p>
                             </div>
 
 
@@ -89,7 +90,8 @@
                                                 th:selected="${factory.factoryCode == (product.factory.factoryCode)}"/>
                                     </select>
                                 </div>
-                                <p style="color: red"  th:if="${#fields.hasErrors('factory')}" th:errors="*{factory}"></p>
+                                <p style="color: red" th:if="${#fields.hasErrors('factory')}"
+                                   th:errors="*{factory}"></p>
                             </div>
 
                             <!--                                <div class="form-group">-->
