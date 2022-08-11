@@ -19,13 +19,10 @@ public class EducationDegree {
 
     public EducationDegree(){};
 
-    public EducationDegree(int educationDegreeId, String educationDegreeName) {
+    public EducationDegree(int educationDegreeId, String educationDegreeName, Set<Employee> employees) {
         this.educationDegreeId = educationDegreeId;
         this.educationDegreeName = educationDegreeName;
-    }
-
-    public EducationDegree(String educationDegreeName) {
-        this.educationDegreeName = educationDegreeName;
+        this.employees = employees;
     }
 
     public int getEducationDegreeId() {
@@ -42,5 +39,13 @@ public class EducationDegree {
 
     public void setEducationDegreeName(String educationDegreeName) {
         this.educationDegreeName = educationDegreeName;
+    }
+
+    public Set<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(Set<Employee> employees) {
+        this.employees = employees;
     }
 }

@@ -16,6 +16,7 @@
                             <h2>
                                 Add new Customer
                             </h2>
+                            <h3 class="text-danger" th:if="${mess != null}" th:text="${mess}"></h3>
                         </div>
                         <div class="body">
                             <form id="form-register" th:action="@{/customer/create}" method="post" th:object="${customer}" enctype="multipart/form-data">
@@ -24,18 +25,25 @@
                                     <div class="form-line">
                                         <input id="id" th:field="*{customerId}" class="form-control" placeholder=" ID" tabindex="1" autofocus="autofocus" />
                                     </div>
+
+                                    <p style="color: red" th:if="${#fields.hasErrors('customerId')}"
+                                       th:errors="*{customerId}"></p>
                                 </div>
+
 
                                 <label for="type">Type: <span style="color: red;"> *</span></label>
                                 <div class="form-group">
                                     <div class="form-line">
                                         <select id="type" th:field="*{customerTypeId}" class="form-control" tabindex="4">
-                                            <option value=""></option>
+<!--                                            <option value=""></option>-->
                                             <option th:each="customerType : ${customerTypes}"
                                                     th:value="${customerType.customerTypeId}"
                                                     th:text="${customerType.customerTypeName}"
                                                     th:selected="${customerType.customerTypeId == (customer.customerTypeId.customerTypeId)}" />
                                         </select>
+
+                                        <p style="color: red" th:if="${#fields.hasErrors('customerTypeId')}"
+                                           th:errors="*{customerTypeId}"></p>
                                     </div>
                                 </div>
 
@@ -52,8 +60,9 @@
                                         <input type="date" id="birthday" th:field="*{customerBirthday}" class="form-control"
                                                placeholder="Birthday" tabindex="2"/>
                                     </div>
-<!--                                    <p style="color: red" th:if="${#fields.hasErrors('outOfDate')}"-->
-<!--                                       th:errors="*{outOfDate}"></p>-->
+
+                                    <p style="color: red" th:if="${#fields.hasErrors('customerBirthday')}"
+                                       th:errors="*{customerBirthday}"></p>
                                 </div>
 
                                 <label for="gender">Gender: <span style="color: red;"> *</span></label>
@@ -73,6 +82,9 @@
                                     <div class="form-line">
                                         <input type="text" id="card" th:field="*{customerIdCard}" class="form-control" placeholder="Id card" tabindex="2" />
                                     </div>
+
+                                    <p style="color: red" th:if="${#fields.hasErrors('customerIdCard')}"
+                                       th:errors="*{customerIdCard}"></p>
                                 </div>
 
                                 <label for="phone">Phone: <span style="color: red;"> *</span></label>
@@ -80,6 +92,9 @@
                                     <div class="form-line">
                                         <input type="text" id="phone" th:field="*{customerPhone}" class="form-control" placeholder="phone" tabindex="2" />
                                     </div>
+
+                                    <p style="color: red" th:if="${#fields.hasErrors('customerPhone')}"
+                                       th:errors="*{customerPhone}"></p>
                                 </div>
 
                                 <label for="email">Email: <span style="color: red;"> *</span></label>
@@ -87,6 +102,10 @@
                                     <div class="form-line">
                                         <input type="text" id="email" th:field="*{customerEmail}" class="form-control" placeholder="email" tabindex="2" />
                                     </div>
+
+
+                                    <p style="color: red" th:if="${#fields.hasErrors('customerEmail')}"
+                                       th:errors="*{customerEmail}"></p>
                                 </div>
 
                                 <label for="address">Address: <span style="color: red;"> *</span></label>

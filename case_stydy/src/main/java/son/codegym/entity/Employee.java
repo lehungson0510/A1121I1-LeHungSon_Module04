@@ -3,6 +3,10 @@ package son.codegym.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -10,11 +14,16 @@ public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeeId;
+    @NotBlank(message = "Không được để trống")
     private String employeeName;
-    private String employeeBirthday;
+    private Date employeeBirthday;
+    @Pattern(regexp = "^\\d{9}$|^\\d{12}$", message = "{idCard}")
     private String employeeIdCard;
+    @Min(value = 0, message = "Lương tích phải lớn hơn 0")
     private double employeeSalary;
+    @Pattern(regexp = "^090\\d{7}$|^091\\d{7}$|^\\(84\\)\\+90\\d{7}$|^\\(84\\)\\+91\\d{7}$", message = "{phone}")
     private String employeePhone;
+    @Pattern(regexp = "^[a-z]\\w*@gmail+\\.[a-z]+$", message = "{email}")
     private String employeeEmail;
     private String employeeAddress;
 
@@ -41,7 +50,7 @@ public class Employee {
     public Employee() {
     }
 
-    public Employee(int employeeId, String employeeName, String employeeBirthday, String employeeIdCard, double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, Position positionId, EducationDegree educationDegreeId, Division divisionId, User username) {
+    public Employee(int employeeId, String employeeName, Date employeeBirthday, String employeeIdCard, double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, Position positionId, EducationDegree educationDegreeId, Division divisionId, User username) {
         this.employeeId = employeeId;
         this.employeeName = employeeName;
         this.employeeBirthday = employeeBirthday;
@@ -56,7 +65,7 @@ public class Employee {
         this.username = username;
     }
 
-    public Employee(String employeeName, String employeeBirthday, String employeeIdCard, double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, Position positionId, EducationDegree educationDegreeId, Division divisionId, User username) {
+    public Employee(String employeeName, Date employeeBirthday, String employeeIdCard, double employeeSalary, String employeePhone, String employeeEmail, String employeeAddress, Position positionId, EducationDegree educationDegreeId, Division divisionId, User username) {
         this.employeeName = employeeName;
         this.employeeBirthday = employeeBirthday;
         this.employeeIdCard = employeeIdCard;
@@ -86,11 +95,11 @@ public class Employee {
         this.employeeName = employeeName;
     }
 
-    public String getEmployeeBirthday() {
+    public Date getEmployeeBirthday() {
         return employeeBirthday;
     }
 
-    public void setEmployeeBirthday(String employeeBirthday) {
+    public void setEmployeeBirthday(Date employeeBirthday) {
         this.employeeBirthday = employeeBirthday;
     }
 

@@ -3,16 +3,24 @@ package son.codegym.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
 import java.util.Set;
 
 @Entity
 public class Service {
     @Id
     @Column(columnDefinition = "varchar(50)")
+    @Pattern(regexp = "^DV-\\d{4}$", message = "Mã dịch vụ không đúng định dạng")
     private String serviceId;
+    @NotBlank(message = "{type}")
     private String serviceName;
+    @Min(value = 0, message = "Diện tích phải lớn hơn 0")
     private double serviceArea;
+    @Min(value = 0, message = "Giá phải lớn hơn 0")
     private double serviceCost;
+    @Min(value = 0, message = "Số lượng người phải lớn hơn 0")
     private int serviceMaxPeople;
 
     @ManyToOne()
@@ -29,12 +37,14 @@ public class Service {
 
     private String standardRoom;
     private String descriptionOtherConvenience;
+    @Min(value = 0, message = "Lớn hơn 0")
     private double poolArea;
+    @Min(value = 0, message = "Số tầng phải là số nguyên dương")
     private int numberOfFloors;
 
     public Service(){};
 
-    public Service(String serviceId, String serviceName, double serviceArea, double serviceCost, int serviceMaxPeople, RentType rentTypeId, ServiceType serviceTypeId, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors) {
+    public Service(String serviceId, String serviceName, int serviceArea, double serviceCost, int serviceMaxPeople, RentType rentTypeId, ServiceType serviceTypeId, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors) {
         this.serviceId = serviceId;
         this.serviceName = serviceName;
         this.serviceArea = serviceArea;
@@ -48,7 +58,7 @@ public class Service {
         this.numberOfFloors = numberOfFloors;
     }
 
-    public Service(String serviceName, double serviceArea, double serviceCost, int serviceMaxPeople, RentType rentTypeId, ServiceType serviceTypeId, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors) {
+    public Service(String serviceName, int serviceArea, double serviceCost, int serviceMaxPeople, RentType rentTypeId, ServiceType serviceTypeId, String standardRoom, String descriptionOtherConvenience, double poolArea, int numberOfFloors) {
         this.serviceName = serviceName;
         this.serviceArea = serviceArea;
         this.serviceCost = serviceCost;
@@ -81,7 +91,7 @@ public class Service {
         return serviceArea;
     }
 
-    public void setServiceArea(int serviceArea) {
+    public void setServiceArea(double serviceArea) {
         this.serviceArea = serviceArea;
     }
 

@@ -3,6 +3,7 @@ package son.codegym.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.Pattern;
 import java.util.Date;
 import java.util.Set;
 
@@ -10,6 +11,7 @@ import java.util.Set;
 public class Customer {
     @Id
     @Column(columnDefinition = "varchar(50)")
+    @Pattern(regexp = "^KH-\\d{4}$", message = "{id}")
     private String customerId;
 
     @ManyToOne
@@ -19,8 +21,11 @@ public class Customer {
     private String customerName;
     private Date customerBirthday;
     private boolean customerGender;
+    @Pattern(regexp = "^\\d{9}$|^\\d{12}$", message = "{idCard}")
     private String customerIdCard;
+    @Pattern(regexp = "^090\\d{7}$|^091\\d{7}$|^\\(84\\)\\+90\\d{7}$|^\\(84\\)\\+91\\d{7}$", message = "{phone}")
     private String customerPhone;
+    @Pattern(regexp = "^[a-z]\\w*@gmail+\\.[a-z]+$", message = "{email}")
     private String customerEmail;
     private String customerAddress;
 

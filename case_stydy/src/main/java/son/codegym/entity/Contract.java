@@ -3,6 +3,9 @@ package son.codegym.entity;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import java.util.Date;
 import java.util.Set;
 
 @Entity
@@ -11,9 +14,11 @@ public class Contract {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int contractId;
 
-    private String contractStartDate;
-    private String contractEndDate;
+    private Date contractStartDate;
+    private Date contractEndDate;
+    @Min(value = 0,message = "Không được bé hơn 0")
     private double contractDeposit;
+    @Min(value = 0,message = "Không được bé hơn 0")
     private double contractTotalMoney;
 
     @ManyToOne
@@ -34,7 +39,7 @@ public class Contract {
 
     public Contract(){};
 
-    public Contract(int contractId, String contractStartDate, String contractEndDate, double contractDeposit, double contractTotalMoney, Employee employeeId, Customer customerId, Service serviceId) {
+    public Contract(int contractId, Date contractStartDate, Date contractEndDate, double contractDeposit, double contractTotalMoney, Employee employeeId, Customer customerId, Service serviceId) {
         this.contractId = contractId;
         this.contractStartDate = contractStartDate;
         this.contractEndDate = contractEndDate;
@@ -45,7 +50,7 @@ public class Contract {
         this.serviceId = serviceId;
     }
 
-    public Contract(String contractStartDate, String contractEndDate, double contractDeposit, double contractTotalMoney, Employee employeeId, Customer customerId, Service serviceId) {
+    public Contract(Date contractStartDate, Date contractEndDate, double contractDeposit, double contractTotalMoney, Employee employeeId, Customer customerId, Service serviceId) {
         this.contractStartDate = contractStartDate;
         this.contractEndDate = contractEndDate;
         this.contractDeposit = contractDeposit;
@@ -63,19 +68,19 @@ public class Contract {
         this.contractId = contractId;
     }
 
-    public String getContractStartDate() {
+    public Date getContractStartDate() {
         return contractStartDate;
     }
 
-    public void setContractStartDate(String contractStartDate) {
+    public void setContractStartDate(Date contractStartDate) {
         this.contractStartDate = contractStartDate;
     }
 
-    public String getContractEndDate() {
+    public Date getContractEndDate() {
         return contractEndDate;
     }
 
-    public void setContractEndDate(String contractEndDate) {
+    public void setContractEndDate(Date contractEndDate) {
         this.contractEndDate = contractEndDate;
     }
 

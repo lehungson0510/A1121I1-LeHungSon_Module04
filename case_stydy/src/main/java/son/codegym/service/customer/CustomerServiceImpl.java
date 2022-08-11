@@ -45,8 +45,13 @@ public class CustomerServiceImpl implements  ICustomerService{
     }
 
     @Override
-    public Page<Customer> search(String name, String address, int customerTypeId, Pageable pageable) {
-        return customerRepo.search(name,address,customerTypeId,pageable);
+    public Page<Customer> search(String name, String email, int customerTypeId, Pageable pageable) {
+        return customerRepo.findAllByCustomerNameContainingAndCustomerEmailContainingAndCustomerTypeId_CustomerTypeIdOrderByCustomerEmail(name,email,customerTypeId,pageable);
+    }
+
+    @Override
+    public Page<Customer> searchNameTypeCustomer(String name, String email, String customerTypeId, Pageable pageable) {
+        return customerRepo.findAllByCustomerNameContainingAndCustomerEmailContainingAndCustomerTypeId_CustomerTypeNameContainingOrderByCustomerEmail(name,email,customerTypeId,pageable);
     }
 
 

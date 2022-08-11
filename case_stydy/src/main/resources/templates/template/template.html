@@ -11,6 +11,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Movie Theater - Author: 2018 Tran Van Tien">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+<!--        <link rel="stylesheet" th:href="@{bootstrap4.6.0/css/bootstrap.css}">-->
+<!--        <script th:src="@{/jquery/jquery-3.5.1.min.js}"></script>-->
+<!--        <script th:src="@{/bootstrap4.6.0/js/bootstrap.js}"></script>-->
         <!-- Icon -->
         <link rel="shortcut icon" type="image/png" th:href="@{/img/favicon.png}"/>
         <!-- Bootstrap 3.3.7 -->
@@ -27,8 +31,8 @@
         <link rel="stylesheet" th:href="@{/css/style.css}" />
     </head>
 
-    <footer th:fragment="footer" class="footer">
-        <div class="container " style="bottom: 0; position: fixed; margin: 0;padding: 0; right: 0">
+    <footer th:fragment="footer" >
+        <div  style="bottom: 0; position: fixed; margin: 0;padding: 0; right: 0">
             <span class="text-muted">Codegym &copy; 2022</span>
         </div>
     </footer>
@@ -48,7 +52,13 @@
                         <a th:href="@{/customer/list}"><span>Customer list</span></a>
                     </li>
                     <li class="header">
-                        <a th:href="@{/customer/create}"><span>Add customer</span></a>
+                        <a th:href="@{/service/list}"><span>Service List</span></a>
+                    </li>
+                    <li class="header">
+                        <a th:href="@{/employee/list}"><span>Employee List</span></a>
+                    </li>
+                    <li class="header">
+                        <a th:href="@{/contract/list}"><span>Contract List</span></a>
                     </li>
                 </ul>
             </div>
