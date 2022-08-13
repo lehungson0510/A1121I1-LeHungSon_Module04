@@ -40,6 +40,8 @@
 
         </div>
     </form>
+
+
     <a th:href="@{/customer/create}">
         <button type="button" class="btn btn-outline-info ">Add new</button>
     </a>
@@ -117,7 +119,9 @@
 <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
      aria-hidden="true">
     <div class="modal-dialog">
-        <!-- ---------thêm thẻ form--------->
+
+        <!-- ----------------------------thêm thẻ form------------------>
+
         <form action="/customer/delete" method="get">
             <div class="modal-content">
                 <div class="modal-header">
@@ -128,6 +132,7 @@
                 <div class="modal-body">
 
                     <!--                    ********************Name ID delete ***********************-->
+
                     <input type="text" hidden id="idCustomer" name="idDelete">
                     <span>Bạn có muốn xóa khách hàng </span>
                     <span class="text-danger" id="nameCustomer"></span><span> không?</span>

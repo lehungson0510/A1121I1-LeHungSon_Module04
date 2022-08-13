@@ -1,6 +1,9 @@
 -- drop database case_study_module4;
-create database if not exists case_study_module4;
-use case_study_module4;
+-- create database if not exists case_study_module4;
+-- create database if not exists test;
+-- use case_study_module4;
+-- use test;
+
 
 insert into  `position`(position_name) values("Lễ tân"),  ("Phục vụ"),("Chuyên viên"),("Giám sát"),("Quản lí"),("Giám đốc");
 select *from  `position`;
@@ -57,11 +60,11 @@ select *from rent_type;
 
 insert into service(service_id, service_name,service_area,service_cost,service_max_people,rent_type_id,service_type_id,standard_room,description_other_convenience,pool_area,number_of_floors) values
 ("1",'Villa Beach Front',25000,10000000,10,3,1,'vip','Có hồ bơi',500,4),
-("2",'House Princess 01',14000,5000000,7,2,2,'vip','Có thêm bếp nướng',null,3),
-("3",'Room Twin 01',5000,1000000,2,4,3,'normal','Có tivi',null,null),
+("2",'House Princess 01',14000,5000000,7,2,2,'vip','Có thêm bếp nướng',1,3),
+("3",'Room Twin 01',5000,1000000,2,4,3,'normal','Có tivi',1,2),
 ("4",'Villa No Beach Front',22000,9000000,8,3,1,'normal','Có hồ bơi',300,3),
-("5",'House Princess 02',10000,4000000,5,3,2,'normal','Có thêm bếp nướng',null,2),
-("6",'Room Twin 02',3000,900000,2,4,3,'normal','Có tivi',null,null);
+("5",'House Princess 02',10000,4000000,5,3,2,'normal','Có thêm bếp nướng',1,2),
+("6",'Room Twin 02',3000,900000,2,4,3,'normal','Có tivi',1,2);
 select *from service;
 
 insert into attach_service(attach_service_name,attach_service_cost,attach_service_unit,attach_service_status) values
@@ -124,3 +127,6 @@ insert into `user` values(new.username,'123');
 end if;
 end $$
 delimiter ;
+
+
+select * from customer where customer_name like "%a%" and customer_email like "%a%" and customer_type_id = 3;

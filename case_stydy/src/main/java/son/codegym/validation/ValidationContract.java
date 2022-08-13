@@ -23,20 +23,22 @@ public class ValidationContract implements Validator {
         }
         if (contract.getContractEndDate() == null) {
             errors.rejectValue("contractEndDate", "type");
-        } else {
+        }
+
+        if (!(contract.getContractStartDate() == null) && !(contract.getContractEndDate() == null)) {
             LocalDate startTime = contract.getContractStartDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             LocalDate endTime = contract.getContractEndDate().toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
             if (Period.between(startTime, endTime).getDays() < 0) {
                 errors.rejectValue("contractEndDate", "dateComparison");
             }
         }
-        if(contract.getCustomerId() == null){
+        if (contract.getCustomerId() == null) {
             errors.rejectValue("customerId", "type");
         }
-        if(contract.getEmployeeId() == null){
+        if (contract.getEmployeeId() == null) {
             errors.rejectValue("employeeId", "type");
         }
-        if(contract.getServiceId() == null){
+        if (contract.getServiceId() == null) {
             errors.rejectValue("serviceId", "type");
         }
     }

@@ -63,7 +63,7 @@ public class CustomerController {
             customerList = customerService.findAllWithPaging(pageable);
         }
         modelAndView.addObject("customerTypes", customerTypes);
-        modelAndView.addObject("condition", condition);
+            modelAndView.addObject("condition", condition);
         modelAndView.addObject("customers", customerList);
         return modelAndView;
     }

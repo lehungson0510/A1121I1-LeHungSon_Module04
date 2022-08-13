@@ -1,5 +1,7 @@
 package son.codegym.entity;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.Set;
 
@@ -10,6 +12,7 @@ public class CustomerType {
     private int customerTypeId;
     private String customerTypeName;
 
+    @JsonBackReference
     @OneToMany(mappedBy = "customerTypeId",cascade = CascadeType.REMOVE)
     private Set<Customer> customers;
     public CustomerType(){};
